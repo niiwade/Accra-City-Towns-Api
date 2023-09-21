@@ -1,0 +1,12 @@
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.csproj.AssemblyReference.cache
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.AssemblyInfoInputs.cache
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.AssemblyInfo.cs
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.csproj.CoreCompileInputs.cache
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/bin/Debug/net7.0/AccraCityApi.Contracts.deps.json
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/bin/Debug/net7.0/AccraCityApi.Contracts.dll
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/bin/Debug/net7.0/AccraCityApi.Contracts.pdb
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.dll
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/refint/AccraCityApi.Contracts.dll
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.pdb
+/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/Debug/net7.0/ref/AccraCityApi.Contracts.dll

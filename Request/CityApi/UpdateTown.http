@@ -1,0 +1,25 @@
+
+PUT http://localhost:5235/town/1
+Content-Type: application/json
+
+{
+    "TownName": "Mamprobi",
+    "District":"dfdfsf",
+    "Category":"fsdsdfs",
+    "Region":"sdfsdf",
+    "Population":"121121",
+    "Latitude": "12.1",
+    "Longitude": "0.2",
+    "startDateTime": "2022-04-08T08:00:00",
+    "NearbyTowns": [
+        "sasadsd",
+        "adasfef",
+        "Thaow",
+        "trqpe"
+
+    ],
+    "NotableLandMarks": [
+      "sasadsd",
+        "adasfef"
+    ]
+}
