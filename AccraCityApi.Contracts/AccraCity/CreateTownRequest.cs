@@ -10,6 +10,7 @@ public record CreateTownRequest(
     float Latitude,
     float Longtitude,
     DateTime startDateTime,
+    DateTime lastModifiedDateTime,
     List<string> NearbyTowns,
     List<string> NotableLandMarks
 );

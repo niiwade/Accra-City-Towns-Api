@@ -1,9 +1,7 @@
 namespace AccraCityApi.Contracts.AccraCity;
 
 
-public record TownRequest(
-
-
+public record TownResponse(
    Guid Id,
     string TownName,
     string District,
@@ -13,8 +11,7 @@ public record TownRequest(
     float Latitude,
     float Longtitude,
     DateTime startDateTime,
-DateTime LastModifiedDateTime,
+    DateTime LastModifiedDateTime,
     List<string> NearbyTowns,
     List<string> NotableLandMarks
-
 );

@@ -54,24 +54,24 @@ Location: {{host}}/town/{{id}}
 ```json
 {
     "id": "00000000-0000-0000-0000-000000000000",
-   "TownName": "Vegan Sunshine",
+   "TownName": "",
     "District":"",
     "Category":"",
     "Region":"",
     "Population":"",
     "Date of District Establishment":"",
-    "Latitude": "Vegan everything! Join us for a healthy Town..",
-    "Longitude": "Vegan everything! Join us for a healthy Town..",
+    "Latitude": "",
+    "Longitude": "",
     "startDateTime": "2022-04-08T08:00:00",
     "LastModifiedDateTime": "2022-04-08T11:00:00",
     "NearbyTown": [
-        "Oatmeal",
-        "Avocado Toast",
-        "Omelette",
-        "Salad"
+        "",
+        "",
+        "",
+        ""
     ],
     "Notable LandMarks": [
-        "Cookie"
+        ""
     ]
 }
 ```
@@ -93,24 +93,24 @@ GET /town/{{id}}
 ```json
 {
     "id": "00000000-0000-0000-0000-000000000000",
- "TownName": "Vegan Sunshine",
+ "TownName": "",
     "District":"",
     "Category":"",
     "Region":"",
     "Population":"",
     "Date of District Establishment":"",
-    "Latitude": "Vegan everything! Join us for a healthy Town..",
-    "Longitude": "Vegan everything! Join us for a healthy Town..",
+    "Latitude": "",
+    "Longitude": "",
     "startDateTime": "2022-04-08T08:00:00",
     "LastModifiedDateTime": "2022-04-08T11:00:00",
     "NearbyTown": [
-        "Oatmeal",
-        "Avocado Toast",
-        "Omelette",
-        "Salad"
+        "",
+        "",
+        "",
+        ""
     ],
     "Notable LandMarks": [
-        "Cookie"
+        ""
     ]
 }
 ```
@@ -125,24 +125,24 @@ PUT /town/{{id}}
 
 ```json
 {
-   "TownName": "Vegan Sunshine",
+   "TownName": "",
     "District":"",
     "Category":"",
     "Region":"",
     "Population":"",
     "Date of District Establishment":"",
-    "Latitude": "Vegan everything! Join us for a healthy Town..",
-    "Longitude": "Vegan everything! Join us for a healthy Town..",
+    "Latitude": "",
+    "Longitude": "",
     "startDateTime": "2022-04-08T08:00:00",
 
     "NearbyTown": [
-        "Oatmeal",
-        "Avocado Toast",
-        "Omelette",
-        "Salad"
+        "",
+        "",
+        "",
+        ""
     ],
     "Notable LandMarks": [
-        "Cookie"
+        ""
     ]
 }
 ```
