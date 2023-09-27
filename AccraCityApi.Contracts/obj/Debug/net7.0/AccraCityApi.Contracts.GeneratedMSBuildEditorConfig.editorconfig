@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AccraCityApi.Contracts
-build_property.ProjectDir = /home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/
+build_property.ProjectDir = /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/

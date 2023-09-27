@@ -1,5 +1,5 @@
 
-using AccraCityApi.Models;
+using AccraCity.Application.Models;
 
 namespace AccraCityApi.Services.Towns;
 

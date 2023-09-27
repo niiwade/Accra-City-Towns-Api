@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi/AccraCityApi.csproj": {}
+    "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/AccraCityApi.csproj": {}
   },
   "projects": {
-    "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj": {
+    "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj",
-        "projectName": "AccraCityApi.Contracts",
-        "projectPath": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj",
-        "packagesPath": "/home/wade/.nuget/packages/",
-        "outputPath": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/obj/",
+        "projectUniqueName": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj",
+        "projectName": "AccraCity.Application",
+        "projectPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj",
+        "packagesPath": "/Users/perigrinobruce/.nuget/packages/",
+        "outputPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/wade/.nuget/NuGet/NuGet.Config"
+          "/Users/perigrinobruce/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -37,6 +37,32 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -48,26 +74,36 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-preview.4.23260.5/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi/AccraCityApi.csproj": {
+    "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi/AccraCityApi.csproj",
-        "projectName": "AccraCityApi",
-        "projectPath": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi/AccraCityApi.csproj",
-        "packagesPath": "/home/wade/.nuget/packages/",
-        "outputPath": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi/obj/",
+        "projectUniqueName": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj",
+        "projectName": "AccraCityApi.Contracts",
+        "projectPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj",
+        "packagesPath": "/Users/perigrinobruce/.nuget/packages/",
+        "outputPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/wade/.nuget/NuGet/NuGet.Config"
+          "/Users/perigrinobruce/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -79,8 +115,79 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj": {
-                "projectPath": "/home/wade/Documents/acs work/c# api/AccraCity/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj"
+              "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj": {
+                "projectPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-preview.4.23260.5/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/AccraCityApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/AccraCityApi.csproj",
+        "projectName": "AccraCityApi",
+        "projectPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/AccraCityApi.csproj",
+        "packagesPath": "/Users/perigrinobruce/.nuget/packages/",
+        "outputPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/perigrinobruce/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/sdk/8.0.100-preview.4.23260.5/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj": {
+                "projectPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/AccraCity.Application.csproj"
+              },
+              "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj": {
+                "projectPath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj"
               }
             }
           }
@@ -95,13 +202,33 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.11, )"
             },
             "MongoDB.driver": {
               "target": "Package",
               "version": "[2.21.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -119,6 +246,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[7.0.5, 7.0.5]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.5, 7.0.5]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -127,7 +268,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.111/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100-preview.4.23260.5/RuntimeIdentifierGraph.json"
         }
       }
     }
