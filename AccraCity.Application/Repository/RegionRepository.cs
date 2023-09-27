@@ -20,10 +20,10 @@ public class RegionRepository: IRegionRepository
         return region;
     }
 
-    public async Task<Region> GetRegionById(Guid id, CancellationToken token = default)
+    public async Task<Region?> GetRegionById(Guid id, CancellationToken token = default)
     {
         var region = await _context.Regions.FirstOrDefaultAsync(i => i.Id == id, cancellationToken: token);
-        return region ?? throw new InvalidOperationException();
+        return region;
     }
 
     public async Task<bool> CreateRegion(Region region, CancellationToken token = default)

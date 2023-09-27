@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using AccraCity.Application.Database;
 using AccraCity.Application.Interface;
 using AccraCity.Application.Models;
@@ -22,10 +23,10 @@ public class DistrictRepository : IDistrictRepository
         return district;
     }
 
-    public async Task<District> GetDistrictById(Guid id, CancellationToken token = default)
+    public async Task<District?> GetDistrictById(Guid id, CancellationToken token = default)
     {
         var district = await _context.Districts.FirstOrDefaultAsync(i => i.Id == id, cancellationToken: token);
-        return district ?? throw new InvalidOperationException();
+        return district;
     }
 
     public async Task<bool> CreateDistrict(District district, CancellationToken token = default)

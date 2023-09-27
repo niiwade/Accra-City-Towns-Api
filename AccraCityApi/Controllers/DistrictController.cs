@@ -1,4 +1,5 @@
 using AccraCity.Application.Interface;
+using AccraCity.Application.Models;
 using AccraCityApi.ContractMappings;
 using AccraCityApi.Contracts.Requests.DistrictRequests;
 using AccraCityApi.Contracts.Response;

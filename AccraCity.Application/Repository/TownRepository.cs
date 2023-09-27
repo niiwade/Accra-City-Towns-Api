@@ -5,8 +5,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AccraCity.Application.Repository;
 
-
-
 public class TownRepository : ITownRepository
 {
     private readonly AppDbContext _context;
@@ -22,11 +20,11 @@ public class TownRepository : ITownRepository
         return town;
     }
 
-    public async Task<Town> GetTownById(Guid id, CancellationToken token = default)
+    public async Task<Town?> GetTownById(Guid id, CancellationToken token = default)
     {
         var result = await _context.Town.FirstOrDefaultAsync(t => t.Id == id, cancellationToken: 
             token);
-        return result ?? throw new InvalidOperationException();
+        return result;
     }
 
     public async Task<bool> CreateTown(Town town, CancellationToken token = default)
