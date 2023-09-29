@@ -24,20 +24,23 @@ POST /town
 
 ```json
 {
-    "TownName": "Mamprobi",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "",
-    "NearbyTown": [
-        
-    ],
-    "Notable LandMarks": [
-      
-    ]
+  "townName": "New Town",
+  "category": " ",
+  "population": "50",
+  "latitude": "334.998",
+  "longitude": "223.889",
+  "createdAt": "2023-09-29T11:28:35.292Z",
+  "nearbyTowns": [
+    "nearbyTowns 1",
+    "nearbyTowns 2",
+    "nearbyTowns 3"
+  ],
+  "notableLandMarks": [
+    "notableLandMarks 1",
+    "notableLandMarks 2"
+  ],
+  "districtId": "b5dcafed-fff1-4326-b3d2-5e53f31c8bee",
+  "regionId": "8f531844-4f73-4271-9d40-c98cda9a856f"
 }
 ```
 
@@ -48,31 +51,34 @@ POST /town
 ```
 
 ```yml
-Location: {{host}}/town/{{id}}
+Location: {{host}}/api/town
 ```
 
 ```json
 {
-    "id": "00000000-0000-0000-0000-000000000000",
-   "TownName": "",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Date of District Establishment":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "2022-04-08T08:00:00",
-    "LastModifiedDateTime": "2022-04-08T11:00:00",
-    "NearbyTown": [
-        "",
-        "",
-        "",
-        ""
-    ],
-    "Notable LandMarks": [
-        ""
-    ]
+    "statusCode": 201,
+    "message": "Town created successfully.",
+    "data": {
+        "id": "732b8ba7-998b-40aa-bf3e-ff7554c607b6",
+        "townName": "The API Town",
+        "category": "Premuim",
+        "population": 50000,
+        "latitude": 334.998,
+        "longitude": 223.889,
+        "createdAt": "2023-09-29T12:48:01.666856Z",
+        "lastModifiedAt": "0001-01-01T00:00:00",
+        "nearbyTowns": [
+            "nearbyTowns 1",
+            "nearbyTowns 2",
+            "nearbyTowns 3"
+        ],
+        "notableLandMarks": [
+            "notableLandMarks 1",
+            "notableLandMarks 2"
+        ],
+        "districtId": "b5dcafed-fff1-4326-b3d2-5e53f31c8bee",
+        "regionId": "8f531844-4f73-4271-9d40-c98cda9a856f"
+    }
 }
 ```
 
@@ -81,7 +87,7 @@ Location: {{host}}/town/{{id}}
 ### Get Towns Request
 
 ```js
-GET /town/{{id}}
+GET /api/town/town/:id
 ```
 
 ### Get Towns Response
@@ -92,26 +98,29 @@ GET /town/{{id}}
 
 ```json
 {
-    "id": "00000000-0000-0000-0000-000000000000",
- "TownName": "",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Date of District Establishment":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "2022-04-08T08:00:00",
-    "LastModifiedDateTime": "2022-04-08T11:00:00",
-    "NearbyTown": [
-        "",
-        "",
-        "",
-        ""
-    ],
-    "Notable LandMarks": [
-        ""
-    ]
+    "statusCode": 201,
+    "message": "Town created successfully.",
+    "data": {
+        "id": "732b8ba7-998b-40aa-bf3e-ff7554c607b6",
+        "townName": "The API Town",
+        "category": "Premuim",
+        "population": 50000,
+        "latitude": 334.998,
+        "longitude": 223.889,
+        "createdAt": "2023-09-29T12:48:01.666856Z",
+        "lastModifiedAt": "0001-01-01T00:00:00",
+        "nearbyTowns": [
+            "nearbyTowns 1",
+            "nearbyTowns 2",
+            "nearbyTowns 3"
+        ],
+        "notableLandMarks": [
+            "notableLandMarks 1",
+            "notableLandMarks 2"
+        ],
+        "districtId": "b5dcafed-fff1-4326-b3d2-5e53f31c8bee",
+        "regionId": "8f531844-4f73-4271-9d40-c98cda9a856f"
+    }
 }
 ```
 
@@ -120,30 +129,28 @@ GET /town/{{id}}
 ### Update Town Request
 
 ```js
-PUT /town/{{id}}
+PUT /api/town/:id
 ```
 
 ```json
 {
-   "TownName": "",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Date of District Establishment":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "2022-04-08T08:00:00",
-
-    "NearbyTown": [
-        "",
-        "",
-        "",
-        ""
-    ],
-    "Notable LandMarks": [
-        ""
-    ]
+  "townName": "The API Town Updated",
+  "category": "Premuim",
+  "population": "50000",
+  "latitude": "334.998",
+  "longitude": "223.889",
+  "lastModifiedAt": "2023-09-29T11:46:55.510Z",
+  "nearbyTowns": [
+    "nearbyTowns 4",
+    "nearbyTowns 5",
+    "nearbyTowns 6"
+  ],
+  "notableLandMarks": [
+    "notableLandMarks 3",
+    "notableLandMarks 4"
+  ],
+  "districtId": "b5dcafed-fff1-4326-b3d2-5e53f31c8bee",
+  "regionId": "8f531844-4f73-4271-9d40-c98cda9a856f"
 }
 ```
 
@@ -168,7 +175,7 @@ Location: {{host}}/town/{{id}}
 ### Delete Town Request
 
 ```js
-DELETE /town/{{id}}
+DELETE /api/town/:id
 ```
 
 ### Delete Town Response
