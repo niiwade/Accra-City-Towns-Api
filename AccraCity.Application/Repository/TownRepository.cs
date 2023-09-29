@@ -37,8 +37,8 @@ public class TownRepository : ITownRepository
             Population =town.Population,
             Latitude = town.Latitude,
             Longitude =town.Longitude,
-            StartDateTime = town.StartDateTime,
-            LastModifiedDateTime  = town.LastModifiedDateTime,
+            CreatedAt = town.CreatedAt,
+            //LastModifiedAt  = town.LastModifiedAt,
             NearbyTowns = town.NearbyTowns,
             NotableLandMarks = town.NotableLandMarks,
             DistrictId = town.DistrictId,
@@ -55,14 +55,14 @@ public class TownRepository : ITownRepository
         
         if (result != null)
         {
-            result.Id = Guid.NewGuid();
+            result.Id = town.Id;
             result.TownName = town.TownName;
             result.Category = town.Category;
             result.Population =town.Population;
             result.Latitude = town.Latitude;
             result.Longitude =town.Longitude;
-            result.StartDateTime = town.StartDateTime;
-            result.LastModifiedDateTime  = town.LastModifiedDateTime;
+            //result.CreatedAt = town.CreatedAt;
+            result.LastModifiedAt  = town.LastModifiedAt;
             result.NearbyTowns = town.NearbyTowns;
             result.NotableLandMarks = town.NotableLandMarks;
             result.DistrictId = town.DistrictId;
