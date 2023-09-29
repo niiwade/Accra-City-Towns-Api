@@ -66,8 +66,13 @@ public class RegionController : Controller
             return BadRequest(new FinalResponse<object> { StatusCode = 400, Message = "Validation failed.", Data = ModelState });
         }
         
+        var doesRegionExists = _regionRepository.RegionExistsByName(request.RegionName, token);
+        if (await doesRegionExists)
+        {
+            return Conflict(new FinalResponse<object> { StatusCode = 409, Message = "Region already exists." });
+        }
         var mapToRegion = request.MapToRegion();
-        await _regionRepository.CreateRegion(mapToRegion ?? throw new InvalidOperationException(), token);
+        await _regionRepository.CreateRegion(mapToRegion, token);
         var regionResponse = new FinalResponse<RegionResponse>
         {
             StatusCode = 201,

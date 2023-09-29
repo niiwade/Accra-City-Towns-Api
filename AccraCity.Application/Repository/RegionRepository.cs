@@ -68,6 +68,12 @@ public class RegionRepository: IRegionRepository
         return region;
     }
 
+    public async Task<bool> RegionExistsByName(string regionName, CancellationToken token = default)
+    {
+        var region =  await _context.Regions.AnyAsync(r => r.RegionName == regionName, cancellationToken: token);
+        return region;
+    }
+
     public async Task<bool> Save(CancellationToken token = default)
     {
         var saved =  await _context.SaveChangesAsync(token);

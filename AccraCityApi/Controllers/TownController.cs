@@ -67,9 +67,14 @@ public class TownController : Controller
         {
             return BadRequest(new FinalResponse<object> { StatusCode = 400, Message = "Validation failed.", Data = ModelState });
         }
-        
+
+        var doesTownExists = _townRepository.TownExistsByName(request.TownName, token);
+        if (await doesTownExists)
+        {
+            return Conflict(new FinalResponse<object> { StatusCode = 409, Message = "Town already exists." });
+        }
         var mapToTown = request.MapToTown();
-        await _townRepository.CreateTown(mapToTown ?? throw new InvalidOperationException(), token);
+        await _townRepository.CreateTown(mapToTown, token);
         var townResponse = new FinalResponse<TownResponse>
         {
             StatusCode = 201,
@@ -77,6 +82,7 @@ public class TownController : Controller
             Data = mapToTown.MapsToResponse()
         };
         return CreatedAtAction(nameof(GetTown), new { id = mapToTown.Id }, townResponse);
+        
     }
     
     //UPDATE Update Town Details
