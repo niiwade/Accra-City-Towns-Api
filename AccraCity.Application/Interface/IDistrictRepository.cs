@@ -10,5 +10,6 @@ public interface IDistrictRepository
     Task<bool> UpdateDistrict(District district, CancellationToken token = default);
     Task<bool> DeleteDistrict(Guid id, CancellationToken token = default);
     Task<bool> DistrictExists(Guid id, CancellationToken token = default);
+    Task<bool> DistrictExistsByName(string districtName, CancellationToken token = default);
     Task<bool> Save(CancellationToken token = default);
 }

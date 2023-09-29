@@ -10,5 +10,6 @@ public interface IRegionRepository
     Task<bool> UpdateRegion(Region region, CancellationToken token = default);
     Task<bool> DeleteRegion(Guid id, CancellationToken token = default);
     Task<bool> RegionExists(Guid id, CancellationToken token = default);
+    Task<bool> RegionExistsByName(string regionName, CancellationToken token = default);
     Task<bool> Save(CancellationToken token = default);
 }

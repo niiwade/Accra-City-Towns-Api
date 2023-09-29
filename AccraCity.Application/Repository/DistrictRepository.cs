@@ -73,6 +73,12 @@ public class DistrictRepository : IDistrictRepository
         return district;
     }
 
+    public async Task<bool> DistrictExistsByName(string districtName, CancellationToken token = default)
+    {
+        var region =  await _context.Districts.AnyAsync(r => r.DistrictName == districtName, cancellationToken: token);
+        return region;
+    }
+
     public async Task<bool> Save(CancellationToken token = default)
     {
         var saved =  await _context.SaveChangesAsync(token);

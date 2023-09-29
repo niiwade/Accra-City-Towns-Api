@@ -67,8 +67,13 @@ public class DistrictController : Controller
             return BadRequest(new FinalResponse<object> { StatusCode = 400, Message = "Validation failed.", Data = ModelState });
         }
         
+        var doesDistrictExists = _districtRepository.DistrictExistsByName(request.DistrictName, token);
+        if (await doesDistrictExists)
+        {
+            return Conflict(new FinalResponse<object> { StatusCode = 409, Message = "District already exists." });
+        }
         var mapToDistrict = request.MapToDistrict();
-        await _districtRepository.CreateDistrict(mapToDistrict ?? throw new InvalidOperationException(), token);
+        await _districtRepository.CreateDistrict(mapToDistrict, token);
         var districtResponse = new FinalResponse<DistrictResponse>
         {
             StatusCode = 201,

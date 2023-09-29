@@ -90,6 +90,12 @@ public class TownRepository : ITownRepository
         return town;
     }
 
+    public async Task<bool> TownExistsByName(string townName, CancellationToken token = default)
+    {
+        var town =  await _context.Town.AnyAsync(r => r.TownName == townName, cancellationToken: token);
+        return town;
+    }
+
     public async Task<bool> Save(CancellationToken token = default)
     {
         var saved =  await _context.SaveChangesAsync(token);
