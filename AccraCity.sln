@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccraCityApi.Contracts", "A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccraCityApi", "AccraCityApi\AccraCityApi.csproj", "{1C35B840-B613-4FD7-BC77-F3B8F4009D1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccraCity.Application", "AccraCity.Application\AccraCity.Application.csproj", "{D5C8EDCA-769E-4ADA-8DFB-6290F03926AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{1C35B840-B613-4FD7-BC77-F3B8F4009D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C35B840-B613-4FD7-BC77-F3B8F4009D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C35B840-B613-4FD7-BC77-F3B8F4009D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5C8EDCA-769E-4ADA-8DFB-6290F03926AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5C8EDCA-769E-4ADA-8DFB-6290F03926AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5C8EDCA-769E-4ADA-8DFB-6290F03926AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5C8EDCA-769E-4ADA-8DFB-6290F03926AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

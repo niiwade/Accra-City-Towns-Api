@@ -1,0 +1,15 @@
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/bin/Debug/net7.0/AccraCity.Application.deps.json
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/bin/Debug/net7.0/AccraCity.Application.runtimeconfig.json
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/bin/Debug/net7.0/AccraCity.Application.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/bin/Debug/net7.0/AccraCity.Application.pdb
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.csproj.AssemblyReference.cache
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.AssemblyInfoInputs.cache
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.AssemblyInfo.cs
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.csproj.CoreCompileInputs.cache
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.sourcelink.json
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/refint/AccraCity.Application.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.pdb
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/AccraCity.Application.genruntimeconfig.cache
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCity.Application/obj/Debug/net7.0/ref/AccraCity.Application.dll

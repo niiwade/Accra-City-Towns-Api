@@ -6,4 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccraCity.Application\AccraCity.Application.csproj" />
+  </ItemGroup>
+
+
+
+
+
+
+
+
+
 </Project>

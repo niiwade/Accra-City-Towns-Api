@@ -1,90 +1,136 @@
+using AccraCity.Application.Interface;
+using AccraCityApi.ContractMappings;
 using AccraCityApi.Contracts.AccraCity;
-using AccraCityApi.Controllers;
-using AccraCityApi.Models;
-using AccraCityApi.Services.Towns;
+using AccraCityApi.Contracts.Requests.TownRequests;
+using AccraCityApi.Contracts.Response;
+using AccraCityApi.Contracts.Response.TownResponses;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace AccraCityApi.Controllers;
 
-[ApiController]//api controller attribute
 
-[Route("[controller]")]
-public class TownController : ControllerBase
+[ApiController]
+public class TownController : Controller
 {
+    private readonly ITownRepository _townRepository;
 
-    private readonly ITownsService _townService;
-
-    public TownController(ITownsService townsService)
+    public TownController(ITownRepository townRepository)
     {
-        _townService = townsService;
+        _townRepository = townRepository;
     }
 
-
-    [HttpPost]
-    public IActionResult CreateTown(CreateTownRequest request)
+    //GET all Towns
+    [HttpGet(ApiEndpoints.Town.GetAll)]
+    public async Task<IActionResult> GetTowns(CancellationToken token)
     {
-        //map request to Town object
-        var town = new Town(
-            Guid.NewGuid(),
-            request.TownName,
-            request.District,
-            request.Category,
-            request.Region,
-            request.Population,
-            request.Latitude,
-            request.Longtitude,
-            request.startDateTime,
-            DateTime.UtcNow,
-            request.NearbyTowns,
-            request.NotableLandMarks
-        );
-
-        //TODO: save request to db
-        _townService.CreateTown(town);
-
-
-        var response = new TownResponse( // convert data to api definition
-            town.Id,
-            town.TownName,
-            town.District,
-            town.Category,
-            town.Region,
-            town.Population,
-            town.Latitude,
-            town.Longtitude,
-            town.StartDateTime,
-            town.LastModifiedDateTime,
-            town.NearbyTowns,
-            town.NotableLandMarks
-        );
-
-        return CreatedAtAction(
-            actionName: nameof(GetTown),
-            routeValues: new { id = town.Id },
-            (response));
+        var towns = await _townRepository.GetTownAsync(token);
+        var townsResponse = new FinalResponse<TownsResponse>
+        {
+            StatusCode = 200,
+            Message = "Towns retrieved successfully.",
+            Data = towns.MapsToResponse()
+        };
+        return Ok(townsResponse);
     }
-
-    [HttpGet("{id:guid}")]
-    public IActionResult GetTown(Guid id)
+    
+    //GET TownById
+    [HttpGet(ApiEndpoints.Town.GetTown)]
+    public async Task<IActionResult> GetTown([FromRoute] Guid id, CancellationToken token)
     {
-        return Ok(id);
+        var town = await _townRepository.GetTownById(id, token);
+        if (town == null)
+        {
+            return NotFound(new FinalResponse<object>
+            {
+                StatusCode = 404,
+                Message = "Town not found."
+            });
+        }
+        var townResponse = new FinalResponse<TownResponse>
+        {
+            StatusCode = 200,
+            Message = "Town retrieved successfully.",
+            Data = town.MapsToResponse()
+        };
+        return Ok(townResponse);
     }
-
-
-    [HttpPut("{id:guid}")]
-    public IActionResult UpdateTown(Guid id, UpdateTownRequest request)
+    
+    //POST Create Town
+    [HttpPost(ApiEndpoints.Town.Create)]
+    public async Task<IActionResult> CreateTown([FromBody] CreateTownRequest request, CancellationToken token)
     {
-        return Ok(request);
+        if (request == null)
+        {
+            return BadRequest(new FinalResponse<object>() { StatusCode = 400,Message = "Town data is invalid." });
+        }
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(new FinalResponse<object> { StatusCode = 400, Message = "Validation failed.", Data = ModelState });
+        }
+        
+        var mapToTown = request.MapToTown();
+        await _townRepository.CreateTown(mapToTown ?? throw new InvalidOperationException(), token);
+        var townResponse = new FinalResponse<TownResponse>
+        {
+            StatusCode = 201,
+            Message = "Town created successfully.",
+            Data = mapToTown.MapsToResponse()
+        };
+        return CreatedAtAction(nameof(GetTown), new { id = mapToTown.Id }, townResponse);
     }
-
-
-    [HttpDelete("{id:guid}")]
-    public IActionResult DeleteTown(Guid id)
+    
+    //UPDATE Update Town Details
+    [HttpPut(ApiEndpoints.Town.Update)]
+    public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateTownRequest request, CancellationToken token)
     {
-        return Ok(id);
+        if (request == null)
+        {
+            return BadRequest(new FinalResponse<object>() { StatusCode = 400,Message = "Town data is invalid." });
+        }
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(new FinalResponse<object> { StatusCode = 400, Message = "Validation failed.", Data = ModelState });
+        }
+        var mapToTown = request.MapToTown(id);
+        var updatedTown = await _townRepository.UpdateTown(mapToTown, token);
+        if (updatedTown is false)
+        {
+            return NotFound(new FinalResponse<object>
+            {
+                StatusCode = 404,
+                Message = "Town not found."
+            });
+        }
+        var response = new FinalResponse<TownResponse>
+        {
+            StatusCode = 200,
+            Message = "Town details updated successfully.",
+            Data = mapToTown.MapsToResponse()
+        };
+        return Ok(response);
     }
-
-
-
+    
+    //DELETE Town 
+    [HttpDelete(ApiEndpoints.Town.Delete)]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken token)
+    {
+        await _townRepository.TownExists(id, token);
+        var deleteTown = await _townRepository.DeleteTown(id, token);
+        if (!deleteTown)
+        {
+            return NotFound(new FinalResponse<string>
+            {
+                StatusCode = 404,
+                Message = "Town not found or already deleted",
+                Data = null
+            });
+        }
+        
+        return Ok(new FinalResponse<string>
+        {
+            StatusCode = 200,
+            Message = "Town deleted successfully",
+            Data = null
+        });
+    }
 }
