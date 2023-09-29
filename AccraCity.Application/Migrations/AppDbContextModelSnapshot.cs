@@ -68,10 +68,13 @@ namespace AccraCity.Application.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<Guid>("DistrictId")
                         .HasColumnType("uuid");
 
-                    b.Property<DateTime>("LastModifiedDateTime")
+                    b.Property<DateTime>("LastModifiedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<float>("Latitude")
@@ -93,9 +96,6 @@ namespace AccraCity.Application.Migrations
 
                     b.Property<Guid>("RegionId")
                         .HasColumnType("uuid");
-
-                    b.Property<DateTime>("StartDateTime")
-                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("TownName")
                         .IsRequired()

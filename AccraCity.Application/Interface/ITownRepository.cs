@@ -10,5 +10,6 @@ public interface ITownRepository
     Task<bool> UpdateTown(Town town, CancellationToken token = default);
     Task<bool> DeleteTown(Guid id, CancellationToken token = default);
     Task<bool> TownExists(Guid id, CancellationToken token = default);
+    Task<bool> TownExistsByName(string townName, CancellationToken token = default);
     Task<bool> Save(CancellationToken token = default);
 }
