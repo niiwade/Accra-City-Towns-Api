@@ -68,8 +68,8 @@ public class TownController : Controller
             return BadRequest(new FinalResponse<object> { StatusCode = 400, Message = "Validation failed.", Data = ModelState });
         }
 
-        var doesTownExists = _townRepository.TownExistsByName(request.TownName, token);
-        if (await doesTownExists)
+        var townExists = _townRepository.TownExistsByName(request.TownName, token);
+        if (await townExists)
         {
             return Conflict(new FinalResponse<object> { StatusCode = 409, Message = "Town already exists." });
         }
