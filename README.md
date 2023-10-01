@@ -21,25 +21,27 @@ This api contains information about all the towns in Accra.
 ### Create Town Request
 
 ```js
-POST /town
+POST api/town
 ```
 
 ```json
 {
-    "TownName": "Mamprobi",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "",
-    "NearbyTown": [
-        
-    ],
-    "Notable LandMarks": [
-      
-    ]
+  "townName": "API Town",
+  "category": "<string>",
+  "population": "<integer>",
+  "latitude": "<float>",
+  "longitude": "<float>",
+  "createdAt": "<dateTime>",
+  "nearbyTowns": [
+    "<string>",
+    "<string>"
+  ],
+  "notableLandMarks": [
+    "<string>",
+    "<string>"
+  ],
+  "districtId": "<uuid>",
+  "regionId": "<uuid>"
 }
 ```
 
@@ -55,24 +57,30 @@ Location: {{host}}/town/{{id}}
 
 ```json
 {
-    "id": "00000000-0000-0000-0000-000000000000",
-   "TownName": "",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Date of District Establishment":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "2022-04-08T08:00:00",
-    "LastModifiedDateTime": "2022-04-08T11:00:00",
-    "NearbyTown": [
-      
+  "statusCode": 201,
+  "message": "Town retrieved successfully.",
+  "data": {
+    "id": "79282fbd-e975-4574-9449-2d5808439754",
+    "townName": "Gold Town",
+    "category": "",
+    "population": 4444444,
+    "latitude": 37.421024,
+    "longitude": 122.142105,
+    "createdAt": "2023-09-27T02:43:16.379Z",
+    "lastModifiedAt": "2023-09-27T02:43:16.379Z",
+    "nearbyTowns": [
+      "nearbyTowns 1",
+      "nearbyTowns 2",
+      "nearbyTowns 3"
     ],
-    "Notable LandMarks": [
-      
-    ]
-}
+    "notableLandMarks": [
+      "notableLandMarks 1",
+      "notableLandMarks 2",
+      "notableLandMarks 3"
+    ],
+    "districtId": "3cc068fd-e22d-4dd2-81fb-8775de3d2fe9",
+    "regionId": "7e05c998-d190-4381-bc8a-08d1e41ba624"
+  }
 ```
 
 ## Get Towns
@@ -80,7 +88,7 @@ Location: {{host}}/town/{{id}}
 ### Get Towns Request
 
 ```js
-GET /town/{{id}}
+GET api/town/{{id}}
 ```
 
 ### Get Towns Response
@@ -91,23 +99,55 @@ GET /town/{{id}}
 
 ```json
 {
-    "id": "00000000-0000-0000-0000-000000000000",
- "TownName": "",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Date of District Establishment":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "2022-04-08T08:00:00",
-    "LastModifiedDateTime": "2022-04-08T11:00:00",
-    "NearbyTown": [
-      
-    ],
-    "Notable LandMarks": [
-       
+  "statusCode": 200,
+  "message": "Towns retrieved successfully.",
+  "data": {
+    "towns": [
+      {
+        "id": "79282fbd-e975-4574-9449-2d5808439754",
+        "townName": "Gold Town",
+        "category": "",
+        "population": 4444444,
+        "latitude": 37.421024,
+        "longitude": 122.142105,
+        "createdAt": "2023-09-27T02:43:16.379Z",
+        "lastModifiedAt": "2023-09-27T02:43:16.379Z",
+        "nearbyTowns": [
+          "nearbyTowns 1",
+          "nearbyTowns 2",
+          "nearbyTowns 3"
+        ],
+        "notableLandMarks": [
+          "notableLandMarks 1",
+          "notableLandMarks 2",
+          "notableLandMarks 3"
+        ],
+        "districtId": "3cc068fd-e22d-4dd2-81fb-8775de3d2fe9",
+        "regionId": "7e05c998-d190-4381-bc8a-08d1e41ba624"
+      },
+      {
+        "id": "60cd59d5-b2fe-481b-9bc9-024310a4e7b6",
+        "townName": "Sliver-Town",
+        "category": "",
+        "population": 50000,
+        "latitude": 334.998,
+        "longitude": 223.889,
+        "createdAt": "2023-09-29T11:48:42.919355Z",
+        "lastModifiedAt": "0001-01-01T00:00:00",
+        "nearbyTowns": [
+          "nearbyTowns 1",
+          "nearbyTowns 2",
+          "nearbyTowns 3"
+        ],
+        "notableLandMarks": [
+          "notableLandMarks 1",
+          "notableLandMarks 2"
+        ],
+        "districtId": "b5dcafed-fff1-4326-b3d2-5e53f31c8bee",
+        "regionId": "8f531844-4f73-4271-9d40-c98cda9a856f"
+      }
     ]
+  }
 }
 ```
 
@@ -116,27 +156,27 @@ GET /town/{{id}}
 ### Update Town Request
 
 ```js
-PUT /town/{{id}}
+PUT api/town/{{id}}
 ```
 
 ```json
 {
-   "TownName": "",
-    "District":"",
-    "Category":"",
-    "Region":"",
-    "Population":"",
-    "Date of District Establishment":"",
-    "Latitude": "",
-    "Longitude": "",
-    "startDateTime": "2022-04-08T08:00:00",
-
-    "NearbyTown": [
-      
-    ],
-    "Notable LandMarks": [
-
-    ]
+  "townName": "API Town",
+  "category": "<string>",
+  "population": "<integer>",
+  "latitude": "<float>",
+  "longitude": "<float>",
+  "lastModifiedAt": "<dateTime>",
+  "nearbyTowns": [
+    "<string>",
+    "<string>"
+  ],
+  "notableLandMarks": [
+    "<string>",
+    "<string>"
+  ],
+  "districtId": "<uuid>",
+  "regionId": "<uuid>"
 }
 ```
 
@@ -153,7 +193,7 @@ or
 ```
 
 ```yml
-Location: {{host}}/town/{{id}}
+Location: {{host}}/api/town/{{id}}
 ```
 
 ## Delete Town
@@ -161,7 +201,7 @@ Location: {{host}}/town/{{id}}
 ### Delete Town Request
 
 ```js
-DELETE /town/{{id}}
+DELETE api/town/{{id}}
 ```
 
 ### Delete Town Response
