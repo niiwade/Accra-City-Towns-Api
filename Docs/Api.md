@@ -105,7 +105,7 @@ GET /api/town/town/id
       {
         "id": "79282fbd-e975-4574-9449-2d5808439754",
         "townName": "Gold Town",
-        "category": "basic",
+        "category": "",
         "population": 4444444,
         "latitude": 37.421024,
         "longitude": 122.142105,
@@ -127,7 +127,7 @@ GET /api/town/town/id
       {
         "id": "60cd59d5-b2fe-481b-9bc9-024310a4e7b6",
         "townName": "Sliver-Town",
-        "category": "Premuim",
+        "category": "",
         "population": 50000,
         "latitude": 334.998,
         "longitude": 223.889,
