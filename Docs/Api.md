@@ -1,5 +1,11 @@
 # Accra City Api
 
+
+The Accra-City-Towns API is a RESTful web service that offers comprehensive information about towns across various regions.
+It allows users to retrieve data such as population, geographical coordinates, notable landmarks, demographics, and more for a wide range of towns.
+Whether you need to research towns for travel planning, business expansion, or demographic analysis, this API provides access to valuable town-specific data to meet your informational needs. 
+Explore and access town details effortlessly with this API to make informed decisions and gain insights into different townships.
+
 - [Accra City Api](#accra-city-api)
   - [Create Town](#create-town)
     - [Create Town Request](#create-town-request)
@@ -50,7 +56,7 @@ POST /api/town
 ```
 
 ```yml
-Location: {{host}}/town/{{id}}
+Location: {{host}}/api/town/{{id}}
 ```
 
 ```json

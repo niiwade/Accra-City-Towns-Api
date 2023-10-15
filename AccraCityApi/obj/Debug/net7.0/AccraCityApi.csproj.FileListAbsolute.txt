@@ -98,3 +98,12 @@
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/AccraCityApi.pdb
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/AccraCityApi.genruntimeconfig.cache
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/ref/AccraCityApi.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.AspNetCore.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Extensions.Hosting.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Extensions.Logging.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Formatting.Compact.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Settings.Configuration.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Sinks.Console.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Sinks.Debug.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Sinks.File.dll
