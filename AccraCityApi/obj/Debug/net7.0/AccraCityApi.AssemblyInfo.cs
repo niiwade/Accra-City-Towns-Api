@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AccraCityApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fc56df41e14fd3246ef39b62715962899865041")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7b4dffbdd38a7c803ecc58b5e6d87edce854b7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("AccraCityApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AccraCityApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
