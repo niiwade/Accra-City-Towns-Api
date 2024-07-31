@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aKNwpJHnsFQPHb1jr8+QhVKMQZue8PYESYThGOta3EePNHrhqxxL51/8icy0rh5yM/IO6fC7V65n4Afg5p1LKw==",
+  "dgSpecHash": "W9WyPGeOpDtPc75pYSIKRk3HRGKiHfM9rZhRvF3Sf4qhd+Qn4QKac8twrpDGLtQK0x/VH7Epi6d+qNxzOEq5Gw==",
   "success": true,
   "projectFilePath": "/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/AccraCityApi.Contracts.csproj",
   "expectedPackageFiles": [
@@ -39,8 +39,8 @@
     "/Users/perigrinobruce/.nuget/packages/serilog.sinks.file/5.0.0/serilog.sinks.file.5.0.0.nupkg.sha512",
     "/Users/perigrinobruce/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/perigrinobruce/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
-    "/Users/perigrinobruce/.nuget/packages/microsoft.netcore.app.ref/7.0.5/microsoft.netcore.app.ref.7.0.5.nupkg.sha512",
-    "/Users/perigrinobruce/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.5/microsoft.aspnetcore.app.ref.7.0.5.nupkg.sha512"
+    "/Users/perigrinobruce/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "/Users/perigrinobruce/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512"
   ],
   "logs": []
 }
