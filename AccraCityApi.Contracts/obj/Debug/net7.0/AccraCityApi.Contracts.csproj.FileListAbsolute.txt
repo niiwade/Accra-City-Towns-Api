@@ -25,4 +25,4 @@
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/obj/Debug/net7.0/ref/AccraCityApi.Contracts.dll
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/bin/Debug/net7.0/AccraCity.Application.dll
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/bin/Debug/net7.0/AccraCity.Application.pdb
-/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCityApi.Contracts.csproj.CopyComplete
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi.Contracts/obj/Debug/net7.0/AccraCit.F3F06EC5.Up2Date

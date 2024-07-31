@@ -92,7 +92,6 @@
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/staticwebassets.build.json
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/staticwebassets.development.json
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/scopedcss/bundle/AccraCityApi.styles.css
-/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/AccraCityApi.csproj.CopyComplete
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/AccraCityApi.dll
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/refint/AccraCityApi.dll
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/AccraCityApi.pdb
@@ -107,3 +106,4 @@
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Sinks.Console.dll
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Sinks.Debug.dll
 /Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/bin/Debug/net7.0/Serilog.Sinks.File.dll
+/Users/perigrinobruce/RiderProjects/Accra-City-Towns-Api/AccraCityApi/obj/Debug/net7.0/AccraCit.351976BD.Up2Date
