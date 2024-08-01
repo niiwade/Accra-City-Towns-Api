@@ -1,11 +1,13 @@
 using AccraCity.Application.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
 namespace AccraCity.Application.Database;
 
-public class AppDbContext :DbContext
+public class AppDbContext : IdentityDbContext<User>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
@@ -30,6 +32,10 @@ public class AppDbContext :DbContext
             .WithOne(e => e.District)
             .HasForeignKey(e => e.DistrictId)
             .IsRequired();
+        
+        modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
+        modelBuilder.Entity<IdentityUserToken<string>>().HasNoKey();
+        modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();
     }
     public DbSet<Town> Town { get; set; }
     public DbSet<Region> Regions { get; set; }
