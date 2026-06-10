@@ -10,8 +10,8 @@ public class Town
     public required float Longitude { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime LastModifiedAt { get; set; }
-    public List<string> NearbyTowns { get; set; } = new List<string>();
-    public List<string> NotableLandMarks { get; set; } = new List<string>();
+    public List<string> NearbyTowns { get; set; } = [];
+    public List<string> NotableLandMarks { get; set; } = [];
     public Guid DistrictId { get; set; }
     public District District { get; set; } = null!;
     public Guid RegionId { get; set; }
