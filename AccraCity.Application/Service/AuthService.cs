@@ -54,8 +54,18 @@ public class AuthService : IAuthRepository
 
     public async Task<AuthServiceResponseDto> RegisterAsync(RegisterDto registerDto)
     {
-        var isExistUser = await _userManager.FindByEmailAsync(registerDto.UserName);
-        if (isExistUser != null)
+        var existingByEmail = await _userManager.FindByEmailAsync(registerDto.Email);
+        if (existingByEmail != null)
+            return new AuthServiceResponseDto()
+            {
+                StatusCode = 400,
+                IsSucceed = false,
+                Message = "Email already exists",
+                Data = null
+            };
+
+        var existingByUsername = await _userManager.FindByNameAsync(registerDto.UserName);
+        if (existingByUsername != null)
             return new AuthServiceResponseDto()
             {
                 StatusCode = 400,
@@ -140,7 +150,7 @@ public class AuthService : IAuthRepository
         var token = GenerateNewJsonWebToken(authClaims);
         return new AuthServiceResponseDto()
         {
-            StatusCode = 201,
+            StatusCode = 200,
             IsSucceed = true,
             Message = "User token generated successfully",
             Data = token
@@ -237,7 +247,7 @@ public class AuthService : IAuthRepository
         var tokenObject = new JwtSecurityToken(
             issuer: _configuration["JWT:Issuer"],
             audience: _configuration["JWT:Audience"],
-            expires: DateTime.Now.AddHours(1),
+            expires: DateTime.UtcNow.AddHours(1),
             claims: authClaims,
             signingCredentials: new SigningCredentials(authSecret, SecurityAlgorithms.HmacSha256)
         );

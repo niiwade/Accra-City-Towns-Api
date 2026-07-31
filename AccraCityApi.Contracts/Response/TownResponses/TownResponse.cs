@@ -7,8 +7,8 @@ public class TownResponse
     public required string TownName { get; set; }
     public required string Category { get; set; }
     public required int Population { get; set; }
-    public required float Latitude { get; set; }
-    public required float Longitude { get; set; }
+    public required double Latitude { get; set; }
+    public required double Longitude { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime LastModifiedAt { get; set; }
     public List<string> NearbyTowns { get; set; } = new List<string>();
