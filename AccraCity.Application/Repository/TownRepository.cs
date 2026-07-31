@@ -16,89 +16,65 @@ public class TownRepository : ITownRepository
 
     public async Task<IEnumerable<Town>> GetTownAsync(CancellationToken token = default)
     {
-        var town = await _context.Town.ToListAsync(cancellationToken: token);
-        return town;
+        return await _context.Town.AsNoTracking().ToListAsync(cancellationToken: token);
     }
 
     public async Task<Town?> GetTownById(Guid id, CancellationToken token = default)
     {
-        var result = await _context.Town.FirstOrDefaultAsync(t => t.Id == id, cancellationToken: 
-            token);
-        return result;
+        return await _context.Town.AsNoTracking().FirstOrDefaultAsync(t => t.Id == id, cancellationToken: token);
     }
 
     public async Task<bool> CreateTown(Town town, CancellationToken token = default)
     {
-        var newTown = new Town()
-        {
-            Id = Guid.NewGuid(),
-            TownName = town.TownName, 
-            Category = town.Category,
-            Population =town.Population,
-            Latitude = town.Latitude,
-            Longitude =town.Longitude,
-            CreatedAt = town.CreatedAt,
-            //LastModifiedAt  = town.LastModifiedAt,
-            NearbyTowns = town.NearbyTowns,
-            NotableLandMarks = town.NotableLandMarks,
-            DistrictId = town.DistrictId,
-            RegionId = town.RegionId
-        };
-        await _context.AddAsync(newTown, token);
-        return await Save(token);
+        await _context.AddAsync(town, token);
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
     public async Task<bool> UpdateTown(Town town, CancellationToken token = default)
     {
-        var result = await _context.Town.FirstOrDefaultAsync(t => 
-            t.Id  == town.Id, cancellationToken: token);
-        
-        if (result != null)
+        var result = await _context.Town.FirstOrDefaultAsync(t => t.Id == town.Id, cancellationToken: token);
+
+        if (result == null)
         {
-            result.Id = town.Id;
-            result.TownName = town.TownName;
-            result.Category = town.Category;
-            result.Population =town.Population;
-            result.Latitude = town.Latitude;
-            result.Longitude =town.Longitude;
-            //result.CreatedAt = town.CreatedAt;
-            result.LastModifiedAt  = town.LastModifiedAt;
-            result.NearbyTowns = town.NearbyTowns;
-            result.NotableLandMarks = town.NotableLandMarks;
-            result.DistrictId = town.DistrictId;
-            result.RegionId = town.RegionId;
+            return false;
         }
-        return await Save(token);
+
+        result.TownName = town.TownName;
+        result.Category = town.Category;
+        result.Population = town.Population;
+        result.Latitude = town.Latitude;
+        result.Longitude = town.Longitude;
+        result.LastModifiedAt = DateTime.UtcNow;
+        result.NearbyTowns = town.NearbyTowns;
+        result.NotableLandMarks = town.NotableLandMarks;
+        result.DistrictId = town.DistrictId;
+        result.RegionId = town.RegionId;
+
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
     public async Task<bool> DeleteTown(Guid id, CancellationToken token = default)
     {
-        var result = await _context.Town.FirstOrDefaultAsync(i => 
-            i.Id == id, cancellationToken: token);
-        
+        var result = await _context.Town.FirstOrDefaultAsync(i => i.Id == id, cancellationToken: token);
+
         if (result == null)
         {
-            return false; // Town not found or already deleted
+            return false;
         }
+
         _context.Remove(result);
-        return await Save(token);
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
     public async Task<bool> TownExists(Guid id, CancellationToken token = default)
     {
-        var town =  await _context.Town.AnyAsync(r => r.Id == id, cancellationToken: token);
-        return town;
+        return await _context.Town.AnyAsync(r => r.Id == id, cancellationToken: token);
     }
 
     public async Task<bool> TownExistsByName(string townName, CancellationToken token = default)
     {
-        var town =  await _context.Town.AnyAsync(r => r.TownName == townName, cancellationToken: token);
-        return town;
-    }
-
-    public async Task<bool> Save(CancellationToken token = default)
-    {
-        var saved =  await _context.SaveChangesAsync(token);
-        return saved > 0;
+        return await _context.Town.AnyAsync(
+            r => r.TownName.ToLower() == townName.ToLower(),
+            cancellationToken: token);
     }
 }

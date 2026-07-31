@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AccraCity.Application.Repository;
 
-public class RegionRepository: IRegionRepository
+public class RegionRepository : IRegionRepository
 {
     private readonly AppDbContext _context;
 
@@ -16,67 +16,55 @@ public class RegionRepository: IRegionRepository
 
     public async Task<IEnumerable<Region>> GetRegionAsync(CancellationToken token = default)
     {
-        var region = await _context.Regions.ToListAsync(cancellationToken: token);
-        return region;
+        return await _context.Regions.AsNoTracking().ToListAsync(cancellationToken: token);
     }
 
     public async Task<Region?> GetRegionById(Guid id, CancellationToken token = default)
     {
-        var region = await _context.Regions.FirstOrDefaultAsync(i => i.Id == id, cancellationToken: token);
-        return region;
+        return await _context.Regions.AsNoTracking().FirstOrDefaultAsync(i => i.Id == id, cancellationToken: token);
     }
 
     public async Task<bool> CreateRegion(Region region, CancellationToken token = default)
     {
-        var newRegion = new Region()
-        {
-            Id = region.Id,
-            RegionName = region.RegionName
-        };
-        await _context.AddAsync(newRegion, token);
-        return await Save(token);
+        await _context.AddAsync(region, token);
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
     public async Task<bool> UpdateRegion(Region region, CancellationToken token = default)
     {
-        var result = await _context.Regions.FirstOrDefaultAsync(r => 
-            r.Id  == region.Id, cancellationToken: token);
-        
-        if (result != null)
+        var result = await _context.Regions.FirstOrDefaultAsync(r => r.Id == region.Id, cancellationToken: token);
+
+        if (result == null)
         {
-            result.RegionName = region.RegionName;
+            return false;
         }
-        return await Save(token);
+
+        result.RegionName = region.RegionName;
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
     public async Task<bool> DeleteRegion(Guid id, CancellationToken token = default)
     {
-        var result = await _context.Regions.FirstOrDefaultAsync(i => 
-            i.Id == id, cancellationToken: token);
-        
+        var result = await _context.Regions.FirstOrDefaultAsync(i => i.Id == id, cancellationToken: token);
+
         if (result == null)
         {
-            return false; // Region not found or already deleted
+            return false;
         }
+
         _context.Remove(result);
-        return await Save(token);
+        return await _context.SaveChangesAsync(token) > 0;
     }
 
     public async Task<bool> RegionExists(Guid id, CancellationToken token = default)
     {
-        var region =  await _context.Regions.AnyAsync(r => r.Id == id, cancellationToken: token);
-        return region;
+        return await _context.Regions.AnyAsync(r => r.Id == id, cancellationToken: token);
     }
 
     public async Task<bool> RegionExistsByName(string regionName, CancellationToken token = default)
     {
-        var region =  await _context.Regions.AnyAsync(r => r.RegionName == regionName, cancellationToken: token);
-        return region;
-    }
-
-    public async Task<bool> Save(CancellationToken token = default)
-    {
-        var saved =  await _context.SaveChangesAsync(token);
-        return saved > 0;
+        return await _context.Regions.AnyAsync(
+            r => r.RegionName.ToLower() == regionName.ToLower(),
+            cancellationToken: token);
     }
 }

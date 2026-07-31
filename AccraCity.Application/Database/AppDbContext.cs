@@ -1,5 +1,4 @@
 using AccraCity.Application.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -13,8 +12,10 @@ public class AppDbContext : IdentityDbContext<User>
     {
         
     }
-    protected override void OnModelCreating(ModelBuilder modelBuilder)  
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         modelBuilder.Entity<Region>()
             .HasMany(e => e.Districts)
             .WithOne(e => e.Region)
@@ -32,10 +33,10 @@ public class AppDbContext : IdentityDbContext<User>
             .WithOne(e => e.District)
             .HasForeignKey(e => e.DistrictId)
             .IsRequired();
-        
-        modelBuilder.Entity<IdentityUserLogin<string>>().HasNoKey();
-        modelBuilder.Entity<IdentityUserToken<string>>().HasNoKey();
-        modelBuilder.Entity<IdentityUserRole<string>>().HasNoKey();
+
+        modelBuilder.Entity<Region>().HasIndex(r => r.RegionName).IsUnique();
+        modelBuilder.Entity<District>().HasIndex(d => d.DistrictName).IsUnique();
+        modelBuilder.Entity<Town>().HasIndex(t => t.TownName).IsUnique();
     }
     public DbSet<Town> Town { get; set; }
     public DbSet<Region> Regions { get; set; }
