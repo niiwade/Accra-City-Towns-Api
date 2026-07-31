@@ -117,7 +117,7 @@ All settings live in `AccraCityApi/appsettings.json`:
     "SecretKey": "<at-least-32-character-secret>"
   },
   "Serilog": {
-    // file + console sink configuration
+    // file + console sink configuration.
   }
 }
 ```
